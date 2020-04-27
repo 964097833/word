@@ -40,9 +40,7 @@ public class ReadWord {
                         if (name.contains("试卷") && !name.startsWith("~$") && name.endsWith(".docx")) {
                             DocxToTxt(file1);
                         }
-                    } else {
-                        searchDirFile(file1);
-                    }
+                    } else searchDirFile(file1);
                 }
             }
         }
@@ -78,8 +76,6 @@ public class ReadWord {
             while(matcher.find()){
                 bw.write((matcher.group()+" ").toLowerCase());
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        } catch (IOException e) { e.printStackTrace(); }
     }
 }
